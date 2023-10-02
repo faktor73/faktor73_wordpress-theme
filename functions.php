@@ -1,4 +1,18 @@
 <?php
+/*
+ *  Force CSS inclusion by theme version
+ */
+$theme = wp_get_theme();
+define('THEME_VERSION', $theme->get('Version') );
+
+function theme_styles()
+{
+    wp_enqueue_style('faktor73-style', get_template_directory_uri().'/style.css', [], THEME_VERSION, 'all');
+}
+add_action('wp_enqueue_scripts', 'theme_styles');
+
+
+
 add_action( 'after_setup_theme', 'faktor73_setup' );
 function faktor73_setup() {
 load_theme_textdomain( 'faktor73', get_template_directory() . '/languages' );
@@ -10,7 +24,7 @@ add_theme_support( 'html5', array( 'search-form', 'navigation-widgets' ) );
 add_theme_support( 'woocommerce' );
 global $content_width;
 if ( !isset( $content_width ) ) { $content_width = 1920; }
-register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'faktor73' ) ) );
+register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'faktor73' ), 'footer-menu' => esc_html__( 'Footer Menu', 'faktor73' ) ) );
 }
 add_action( 'admin_notices', 'faktor73_notice' );
 function faktor73_notice() {
@@ -163,4 +177,15 @@ return count( $comments_by_type['comment'] );
 } else {
 return $count;
 }
+}
+
+// Fully Disable Gutenberg editor.
+add_filter('use_block_editor_for_post_type', '__return_false', 10);
+// Don't load Gutenberg-related stylesheets.
+add_action( 'wp_enqueue_scripts', 'remove_block_css', 100 );
+function remove_block_css() {
+wp_dequeue_style( 'wp-block-library' ); // Wordpress core
+wp_dequeue_style( 'wp-block-library-theme' ); // Wordpress core
+wp_dequeue_style( 'wc-block-style' ); // WooCommerce
+wp_dequeue_style( 'storefront-gutenberg-blocks' ); // Storefront theme
 }
