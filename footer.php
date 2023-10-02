@@ -7,6 +7,13 @@
 </div>
 </footer>
 </div>
+</div>
+<div class="basel">
+	<nav id="footer-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+		<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'link_before' => '<span itemprop="name">', 'link_after' => '</span>' ) ); ?>
+	</nav>
+</div>
 <?php wp_footer(); ?>
+
 </body>
 </html>
