@@ -563,6 +563,44 @@ body.page-id-1497 * .entry-content ol {
 
 
 /*
+ * 		MOTIVATION
+ * 
+ */
+.motivation {
+	text-align: center;
+	line-height: 1.5;
+}
+
+.motivation span {
+	border-bottom: 0;
+	cursor: default;
+	display: inline;
+	font-weight: 400;
+	margin-right: 1rem;
+}
+
+.motivation br {
+	display: none;
+}
+
+.motivation span[data-weight="3"] {
+	font-size: 1.875rem;
+}
+
+.motivation span[data-weight="4"] {
+	font-size: 1.75rem;
+}
+
+.motivation span[data-weight="5"] {
+	font-size: 1.5rem;
+}
+
+.motivation span[data-weight="6"] {
+	font-size: 1.25rem;
+}
+
+
+/*
  *			stop ignoring :-)
  *			all below this line are directly useable within your website project
  */
@@ -600,43 +638,6 @@ h4 {
 	margin: 2rem 0 1rem;
 }
 
-
-/*
- * 		MOTIVATION
- * 
- */
-.motivation {
-	text-align: center;
-	line-height: 1.5;
-}
-
-.motivation span {
-	border-bottom: 0;
-	cursor: default;
-	display: inline;
-	font-weight: 400;
-	margin-right: 1rem;
-}
-
-.motivation br {
-	display: none;
-}
-
-.motivation span[data-weight="3"] {
-	font-size: 1.875rem;
-}
-
-.motivation span[data-weight="4"] {
-	font-size: 1.75rem;
-}
-
-.motivation span[data-weight="5"] {
-	font-size: 1.5rem;
-}
-
-.motivation span[data-weight="6"] {
-	font-size: 1.25rem;
-}
 
 
 
