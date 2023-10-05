@@ -32,7 +32,7 @@ $user_id = get_current_user_id();
 $admin_url = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $param = ( count( $_GET ) ) ? '&' : '?';
 if ( !get_user_meta( $user_id, 'faktor73_notice_dismissed_8' ) && current_user_can( 'manage_options' ) )
-echo '<div class="notice notice-info"><p><a href="' . esc_url( $admin_url ), esc_html( $param ) . 'dismiss" class="alignright" style="text-decoration:none"><big>' . esc_html__( 'Ⓧ', 'faktor73' ) . '</big></a>' . wp_kses_post( __( '<big><strong>📝 Thank you for using BlankSlate!</strong></big>', 'faktor73' ) ) . '<br /><br /><a href="https://wordpress.org/support/theme/faktor73/reviews/#new-post" class="button-primary" target="_blank">' . esc_html__( 'Review', 'faktor73' ) . '</a> <a href="https://github.com/tidythemes/faktor73/issues" class="button-primary" target="_blank">' . esc_html__( 'Feature Requests & Support', 'faktor73' ) . '</a> <a href="https://calmestghost.com/donate" class="button-primary" target="_blank">' . esc_html__( 'Donate', 'faktor73' ) . '</a></p></div>';
+        echo '<div class="notice notice-info"><p><a href="' . esc_url( $admin_url ), esc_html( $param ) . 'dismiss" class="alignright" style="text-decoration:none"><big>' . esc_html__( 'Ⓧ', 'faktor73' ) . '</big></a>' . wp_kses_post( __( '<big><strong>📝 Thank you for using a FAKTOR73 theme!</strong></big>', 'faktor73' ) ) . '<br /><br /><a href="https://github.com/faktor73/faktor73_wordpress-theme/issues" class="button-primary" target="_blank">' . esc_html__( 'Feature Requests & Support', 'faktor73' ) . '</a> </p></div>';
 }
 add_action( 'admin_init', 'faktor73_notice_dismissed' );
 function faktor73_notice_dismissed() {
